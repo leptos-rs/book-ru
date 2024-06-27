@@ -1,6 +1,6 @@
-# Leptos Book
+# Leptos Book (Russian)
 
-- [Leptos Book](#leptos-book)
+- [Leptos Book (Russian)](#leptos-book)
   - [Introduction](#introduction)
   - [Building the Book](#building-the-book)
   - [Optional: VSCode Dev Container](#vscode-dev-container)
@@ -9,7 +9,9 @@
 
 This project contains the core of a new introductory guide to Leptos. Pull requests for any typos, clarification, or improvements are always welcome.
 
-You can find the live version of this book on the [Leptos Website](https://book.leptos.dev/).
+This repo is for the Russian version of the book, which none of the primary maintainers speak and is community maintained. It may be out of date. Feel free to reference the [English version](https://book.lepotos.dev) if you get stuck. 
+
+You can find the live version of this book on the [Leptos Website](https://ru-book.leptos.dev/).
 
 ## Building the Book
 
