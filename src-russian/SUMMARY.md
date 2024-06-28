@@ -1,4 +1,4 @@
-z# Оглавление
+# Оглавление
 
 - [Вступление](./01_introduction.md)
 - [Начало работы](./getting_started/README.md)
