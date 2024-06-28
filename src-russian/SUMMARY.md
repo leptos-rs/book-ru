@@ -1,4 +1,4 @@
-z# Оглавление
+# Оглавление
 
 - [Вступление](./01_introduction.md)
 - [Начало работы](./getting_started/README.md)
@@ -8,8 +8,8 @@ z# Оглавление
     - [Простой компонент](./view/01_basic_component.md)
     - [Динамические атрибуты](./view/02_dynamic_attributes.md)
     - [Компоненты и свойства](./view/03_components.md)
-    - [Итерирование](./view/04_iteration.md)
-    - [Итерирование более сложных структур через `<For>`](./view/04b_iteration.md)
+    - [Итерация](./view/04_iteration.md)
+    - [Итерация более сложных структур](./view/04b_iteration.md)
     - [Формы и поля ввода](./view/05_forms.md)
     - [Порядок выполнения](./view/06_control_flow.md)
     - [Обработка ошибок](./view/07_errors.md)
