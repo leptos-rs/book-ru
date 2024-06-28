@@ -132,6 +132,7 @@ SublimeText 3, `LSP-rust-analyzer.sublime-settings` в `Goto Anything...` мен
 }
 ```
 
+
 ## 3) Настройка `leptosfmt` с анализатором Rust (опциально)
 
 `leptosfmt` это форматер для Leptos макроса `view!`  (внутри которого вы обычно пишете ваш UI код).
