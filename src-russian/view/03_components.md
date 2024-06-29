@@ -396,7 +396,7 @@ fn ProgressBar(
 [Click to open CodeSandbox.](https://codesandbox.io/p/sandbox/3-components-0-5-5vvl69?file=%2Fsrc%2Fmain.rs%3A1%2C1)
 
 <noscript>
-  Пожалуйста включите Javascript для просмотра примеров.
+  Пожалуйста, включите Javascript для просмотра примеров.
 </noscript>
 
 <template>

@@ -158,7 +158,7 @@ move |_| {
 [Кликните чтобы открыть CodeSandbox.](https://codesandbox.io/p/sandbox/1-basic-component-3d74p3?file=%2Fsrc%2Fmain.rs%3A1%2C1)
 
 <noscript>
-  Пожалуйста включите Javascript для просмотра примеров.
+  Пожалуйста, включите Javascript для просмотра примеров.
 </noscript>
 
 > Чтобы увидеть браузер в песочнице вам может понадобиться нажать `Add DevTools >

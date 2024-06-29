@@ -16,7 +16,7 @@
 1. Выполните `cargo add console_error_panic_hook` в вашем проекте
 2. В вашей функции main добавьте вызов `console_error_panic_hook::set_once();`
 
-> Если это непонятно, [вот пример](https://github.com/leptos-rs/leptos/blob/main/examples/counter/src/main.rs#L4-L15).
+> Если это не понятно, [вот пример](https://github.com/leptos-rs/leptos/blob/main/examples/counter/src/main.rs#L4-L15).
 
 Теперь сообщения о паниках в консоле браузере будут намного лучше!
 
