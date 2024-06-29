@@ -125,7 +125,7 @@ pub fn App() -> impl IntoView {
 
 ## Вариант 2: Вложенные Сигналы
 
-Если мы всё же хотим мелкозернистую реактивность (англ. [fine-grained reactivity](https://www.google.com/search?q=fine-grained+reactivity))
+Если мы всё же хотим мелкозернистую реактивность (_англ. [fine-grained reactivity](https://www.google.com/search?q=fine-grained+reactivity)_)
 для значения, одним из вариантов явлется обернуть `value` каждого ряда в сигнал.
 
 ```rust
