@@ -52,7 +52,7 @@ button()
     .child("Clear")
 ```
 
-> Много дополнительных методы можно найти в документации к [`HtmlElement`](https://docs.rs/leptos/latest/leptos/struct.HtmlElement.html#method.child),
+> Много дополнительных методов можно найти в документации к [`HtmlElement`](https://docs.rs/leptos/latest/leptos/struct.HtmlElement.html#method.child),
 > включая некоторые методы, недоступные напрямую в макросе `view`.
 
 Всё это складывается в очень Rust'овый синтаксис для построения полнофункциональных представлений, если вы предпочитаете этот стиль.
