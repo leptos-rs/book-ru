@@ -7,7 +7,7 @@
 
 Данное руководство не ждёт, что вы что-либо знаете о мелкозернистой реактивности (_англ. [fine-grained reactivity](https://www.google.com/search?q=fine-grained+reactivity)_)
 или о особенностях современных Веб-фреймворков. Оно подразумевает, что вы знакомы 
-с Rust, HTML, CSS, а также DOM и простые Web API.
+с Rust, HTML, CSS, а также с DOM и с простыми Web API.
 
 Leptos больше всего похож на такие фреймворки как [Solid](https://www.solidjs.com) (JavaScript)
 и [Sycamore](https://sycamore-rs.netlify.app/) (Rust). У него также есть схожие черты с другими фреймворками,
