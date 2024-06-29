@@ -41,7 +41,7 @@ p().child((em().child("Big, "), strong().child("bold "), "text"))
 p().attr("id", "foo").attr("data-count", move || count().to_string())
 ```
 
-Аналогично, `class:`, `prop:`, и `style:` синтаксисы соотносятся с метлдами [`.class()`](https://docs.rs/leptos/latest/leptos/struct.HtmlElement.html#method.class), [`.prop()`](https://docs.rs/leptos/latest/leptos/struct.HtmlElement.html#method.prop), и [`.style()`](https://docs.rs/leptos/latest/leptos/struct.HtmlElement.html#method.style).
+Аналогично, `class:`, `prop:`, и `style:` соотносятся с методами [`.class()`](https://docs.rs/leptos/latest/leptos/struct.HtmlElement.html#method.class), [`.prop()`](https://docs.rs/leptos/latest/leptos/struct.HtmlElement.html#method.prop), и [`.style()`](https://docs.rs/leptos/latest/leptos/struct.HtmlElement.html#method.style).
 
 Слушатели событий могут быть добавлены через [`.on()`](https://docs.rs/leptos/latest/leptos/struct.HtmlElement.html#method.on). Типизированные события из [`leptos::ev`](https://docs.rs/leptos/latest/leptos/ev/index.html) предотвращают опечатки
 в названиях событий и обеспечивают правильный вывод типов _(англ. type inference)_ в функции обратного вызова.
