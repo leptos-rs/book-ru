@@ -180,7 +180,7 @@ let message = move || if value() > 5 {
 ### `<Show/>`
 
 Компонент [`<Show/>`](https://docs.rs/leptos/latest/leptos/fn.Show.html) это ответ этим проблемам. Вы передаёте условную функцию `when` и `fallback` для показа в случае если `when` вернула  `false`,
-и детей, которые будут отображаться если `when` равно `true`.
+и дочерние элементы, которые будут отображаться если `when` равно `true`.
 
 ```rust
 let (value, set_value) = create_signal(0);

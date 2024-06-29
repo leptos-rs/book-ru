@@ -14,7 +14,7 @@
     - [Порядок выполнения](./view/06_control_flow.md)
     - [Обработка ошибок](./view/07_errors.md)
     - [Общение Родитель-Ребёнок в дереве компонентов](./view/08_parent_child.md)
-    - [Передача Детей другим компонентам](./view/09_component_children.md)
+    - [Передача дочерних элементов другим компонентам](./view/09_component_children.md)
     - [Без макросов: синтаксис билдера View](./view/builder.md)
 - [Реактивность](./reactivity/README.md)
     - [Работа с сигналами](./reactivity/working_with_signals.md)
