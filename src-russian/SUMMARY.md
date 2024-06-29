@@ -15,7 +15,7 @@
     - [Обработка ошибок](./view/07_errors.md)
     - [Коммуникация Родитель-Ребёнок](./view/08_parent_child.md)
     - [Передача дочерних элементов другим компонентам](./view/09_component_children.md)
-    - [Без макросов: синтаксис билдера View](./view/builder.md)
+    - [Без макросов: синтаксис строителя View](./view/builder.md)
 - [Реактивность](./reactivity/README.md)
     - [Работа с сигналами](./reactivity/working_with_signals.md)
     - [Реагирование на изменения с помощью `create_effect`](./reactivity/14_create_effect.md)
