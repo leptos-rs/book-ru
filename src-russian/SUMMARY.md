@@ -19,7 +19,7 @@
 - [Реактивность](./reactivity/README.md)
     - [Работа с сигналами](./reactivity/working_with_signals.md)
     - [Реагирование на изменения с помощью `create_effect`](./reactivity/14_create_effect.md)
-    - [Примечание: Реактивность и функции](./reactivity/interlude_functions.md)
+    - [Примечание: Реактивность и Функции](./reactivity/interlude_functions.md)
 - [Тестирование](./testing.md)
 - [Асинхронность](./async/README.md)
     - [Подгрузка данных с помощью ресурсов (Resource)](./async/10_resources.md)
