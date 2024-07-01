@@ -18,8 +18,9 @@ CSR приложения имеют и некоторые недоставки: 
 чтобы Rust был и на клиенте и на сервере. При использовании варианта Leptos SSR, приложение рендерится 
 в HTML на сервере и отправляется в браузер; затем в дело вступает WebAssembly, вооружая HTML, чтобы ваше приложение
 стало интерактивным — этот процесс называется "гидратация". На стороне сервера, Leptos SSR приложения тесно интегрируются
-либо с фреймворком на выбор — [Actix-web](https://docs.rs/leptos_actix/latest/leptos_actix/index.html) или [Axum](https://docs.rs/leptos_axum/latest/leptos_axum/index.html), таким образом вы можете крейты этих сообществ,
-чтобы они помогли вам в построении вашего сервера Leptos.
+либо с фреймворком на выбор — [Actix-web](https://docs.rs/leptos_actix/latest/leptos_actix/index.html)
+или [Axum](https://docs.rs/leptos_axum/latest/leptos_axum/index.html), 
+так что можно использовать крейты этих сообществ при построении сервера Leptos.
 Преимущества выбора Leptos SSR включают в себя помощь в получении наилучшего времени первоначальной загрузки и оптимальные
 очки SEO для вашего веб-приложения. SSR приложения могут также кардинально упростить клиент-серверное взаимодействие
 с помощью Leptos-фичи под названием "серверные функции", которая позволяет прозрачно вызывать функции на сервере
@@ -75,7 +76,7 @@ cargo init leptos-tutorial
 cargo add leptos --features=csr,nightly
 ```
 
-Или вы можете убрать  `nightly` если вы используете стабильную версию Rust
+Или без  `nightly` если вы на стабильной версии Rust
 
 ```bash
 cargo add leptos --features=csr
@@ -83,7 +84,7 @@ cargo add leptos --features=csr
 
 > Использование `nightly` Rust, и `nightly` feature в Leptos включает синтаксис вызова функции для геттеров и сеттеров сигналов, который использован в большей части этой книги.
 >
-> Чтобы использовать nightly Rust, вы можете либо выбрать nightly для всех ваших Rust проектов, выполнив команды
+> Чтобы использовать nightly Rust, можно либо выбрать nightly для всех Rust проектов, выполнив
 >
 > ```bash
 > rustup toolchain install nightly
@@ -100,7 +101,7 @@ cargo add leptos --features=csr
 >
 > [Здесь больше подробностей](https://doc.rust-lang.org/book/appendix-07-nightly-rust.html)
 >
-> Если вы бы предпочли использовать стабильную версию Rust с Leptos, то так тоже можно. В этом руководстве и примерах
+> Если хотите использовать стабильную версию Rust с Leptos, то так тоже можно. В этом руководстве и примерах
 > просто используйте методы
 > [`ReadSignal::get()`](https://docs.rs/leptos/latest/leptos/struct.ReadSignal.html#impl-SignalGet%3CT%3E-for-ReadSignal%3CT%3E) 
 > и [`WriteSignal::set()`](https://docs.rs/leptos/latest/leptos/struct.WriteSignal.html#impl-SignalGet%3CT%3E-for-ReadSignal%3CT%3E) 
