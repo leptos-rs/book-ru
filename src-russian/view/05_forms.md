@@ -207,7 +207,7 @@ view! {
 
 ```admonish sandbox title="Controlled vs uncontrolled forms CodeSandbox" collapsible=true
 
-[Click to open CodeSandbox.](https://codesandbox.io/p/sandbox/5-forms-0-5-rf2t7c?file=%2Fsrc%2Fmain.rs%3A1%2C1)
+[Нажмите, чтобы открыть CodeSandbox.](https://codesandbox.io/p/sandbox/5-forms-0-5-rf2t7c?file=%2Fsrc%2Fmain.rs%3A1%2C1)
 
 <noscript>
   Пожалуйста, включите Javascript для просмотра примеров.

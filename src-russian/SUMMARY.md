@@ -26,7 +26,7 @@
     - [Ожидания (Suspense)](./async/11_suspense.md)
     - [Переходы (Transition)](./async/12_transition.md)
     - [Действия (Action)](./async/13_actions.md)
-- [Примечание: Пробрасывание дочерних элементов](./interlude_projecting_children.md)
+- [Примечание: Проброс дочерних элементов](./interlude_projecting_children.md)
 - [Управление глобальным состоянием](./15_global_state.md)
 - [Маршрутизатор URL](./router/README.md)
     - [Определение `<Routes/>`](./router/16_routes.md)

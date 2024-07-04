@@ -304,7 +304,7 @@ _ничего не происходит_ в промежуточных комп�
 
 ```admonish sandbox title="Live example" collapsible=true
 
-[Click to open CodeSandbox.](https://codesandbox.io/p/sandbox/8-parent-child-0-5-7rz7qd?file=%2Fsrc%2Fmain.rs%3A1%2C2)
+[Нажмите, чтобы открыть CodeSandbox.](https://codesandbox.io/p/sandbox/8-parent-child-0-5-7rz7qd?file=%2Fsrc%2Fmain.rs%3A1%2C2)
 
 <noscript>
   Пожалуйста, включите Javascript для просмотра примеров.
