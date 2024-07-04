@@ -40,7 +40,8 @@ error[E0507]: cannot move out of `fallback`, a captured variable in an `Fn` clos
 error[E0507]: cannot move out of `children`, a captured variable in an `Fn` closure
 ```
 
-The problem here is that both `<Suspense/>` and `<Show/>` need to be able to construct their `children` multiple times. The first time you construct `<Suspense/>`’s children, it would take ownership of `fallback` and `children` to move them into the invocation of `<Show/>`, but then they're not available for future `<Suspense/>` children construction.
+The problem here is that both `<Suspense/>` and `<Show/>` need to be able to construct their `children` multiple times. 
+The first time you construct `<Suspense/>`’s children, it would take ownership of `fallback` and `children` to move them into the invocation of `<Show/>`, but then they're not available for future `<Suspense/>` children construction.
 
 ## The Details
 
@@ -82,7 +83,9 @@ All components own their props; so the `<Show/>` in this case can’t be called 
 
 ## Solution
 
-However, both `<Suspense/>` and `<Show/>` take `ChildrenFn`, i.e., their `children` should implement the `Fn` type so they can be called multiple times with only an immutable reference. This means we don’t need to own `children` or `fallback`; we just need to be able to pass `'static` references to them.
+However, both `<Suspense/>` and `<Show/>` take `ChildrenFn`, i.e., their `children` should implement the `Fn` type so they 
+can be called multiple times with only an immutable reference. This means we don’t need to own `children`
+or `fallback`; we just need to be able to pass `'static` references to them.
 
 We can solve this problem by using the [`store_value`](https://docs.rs/leptos/latest/leptos/fn.store_value.html) primitive. This essentially stores a value in the reactive system, handing ownership off to the framework in exchange for a reference that is, like signals, `Copy` and `'static`, which we can access or modify through certain methods.
 

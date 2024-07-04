@@ -266,7 +266,7 @@ view! {
 
 ```admonish sandbox title="Live example" collapsible=true
 
-[Click to open CodeSandbox.](https://codesandbox.io/p/sandbox/6-control-flow-0-5-4yn7qz?file=%2Fsrc%2Fmain.rs%3A1%2C1)
+[Нажмите, чтобы открыть CodeSandbox.](https://codesandbox.io/p/sandbox/6-control-flow-0-5-4yn7qz?file=%2Fsrc%2Fmain.rs%3A1%2C1)
 
 <noscript>
   Please enable JavaScript to view examples.
@@ -279,7 +279,7 @@ view! {
 ```
 
 <details>
-<summary>CodeSandbox Source</summary>
+<summary>Код примера CodeSandbox</summary>
 
 ```rust
 use leptos::*;

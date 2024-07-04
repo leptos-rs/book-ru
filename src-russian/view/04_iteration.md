@@ -101,7 +101,7 @@ _Можно_ рендерить и `Fn() -> Vec<_>` реактивно. Но з�
 
 ```admonish sandbox title="Live example" collapsible=true
 
-[Click to open CodeSandbox.](https://codesandbox.io/p/sandbox/4-iteration-0-5-pwdn2y?file=%2Fsrc%2Fmain.rs%3A1%2C1)
+[Нажмите, чтобы открыть CodeSandbox.](https://codesandbox.io/p/sandbox/4-iteration-0-5-pwdn2y?file=%2Fsrc%2Fmain.rs%3A1%2C1)
 
 <noscript>
   Пожалуйста, включите Javascript для просмотра примеров.
@@ -114,7 +114,7 @@ _Можно_ рендерить и `Fn() -> Vec<_>` реактивно. Но з�
 ```
 
 <details>
-<summary>Код пример CodeSandbox</summary>
+<summary>Код примера CodeSandbox</summary>
 
 ```rust
 use leptos::*;

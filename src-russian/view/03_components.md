@@ -393,7 +393,7 @@ fn ProgressBar(
 
 ```admonish sandbox title="Live example" collapsible=true
 
-[Click to open CodeSandbox.](https://codesandbox.io/p/sandbox/3-components-0-5-5vvl69?file=%2Fsrc%2Fmain.rs%3A1%2C1)
+[Нажмите, чтобы открыть CodeSandbox.](https://codesandbox.io/p/sandbox/3-components-0-5-5vvl69?file=%2Fsrc%2Fmain.rs%3A1%2C1)
 
 <noscript>
   Пожалуйста, включите Javascript для просмотра примеров.
@@ -406,7 +406,7 @@ fn ProgressBar(
 ```
 
 <details>
-<summary>CodeSandbox Source</summary>
+<summary>Код примера CodeSandbox</summary>
 
 ```rust
 use leptos::*;
