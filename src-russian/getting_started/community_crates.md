@@ -2,7 +2,7 @@
 
 ## Сообщество
 
-Одно финальное замечание прежде чем мы начнём разработку на Leptos: не стесняйтесь присоединиться к нашему _раст_ущему сообществу Leptos в [Discord](https://discord.gg/YdRAhS7eQB) и на [Github](https://github.com/leptos-rs/leptos).  
+Одно финальное замечание прежде чем мы начнём разработку на Leptos: смело присоединяйтесь к нашему **раст**ущему сообществу Leptos в [Discord](https://discord.gg/YdRAhS7eQB) и на [Github](https://github.com/leptos-rs/leptos).  
 Наш Discord в особенности активен и дружелюбен — мы бы очень хотели вас там видеть!
 
 ```admonish note
