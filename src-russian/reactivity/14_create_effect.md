@@ -184,7 +184,7 @@ set_num.set(2); // (nothing happens)
 
 ```admonish sandbox title="Live example" collapsible=true
 
-[Кликните чтобы открыть CodeSandbox.](https://codesandbox.io/p/sandbox/14-effect-0-5-d6hkch?file=%2Fsrc%2Fmain.rs%3A1%2C1)
+[Нажмите, чтобы открыть CodeSandbox.](https://codesandbox.io/p/sandbox/14-effect-0-5-d6hkch?file=%2Fsrc%2Fmain.rs%3A1%2C1)
 
 <noscript>
   Пожалуйста, включите Javascript для просмотра примеров.

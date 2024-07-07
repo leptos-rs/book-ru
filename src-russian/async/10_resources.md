@@ -54,7 +54,7 @@ view! {
 
 ```admonish sandbox title="Live example" collapsible=true
 
-[Нажмите чтобы открыть CodeSandbox.](https://codesandbox.io/p/sandbox/10-resources-0-5-x6h5j6?file=%2Fsrc%2Fmain.rs%3A2%2C3)
+[Нажмите, чтобы открыть CodeSandbox.](https://codesandbox.io/p/sandbox/10-resources-0-5-x6h5j6?file=%2Fsrc%2Fmain.rs%3A2%2C3)
 
 <noscript>
   Пожалуйста, включите Javascript для просмотра примеров.

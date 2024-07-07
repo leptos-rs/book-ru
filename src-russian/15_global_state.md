@@ -15,25 +15,29 @@
 2. Передача сигналов через контексты
 3. Создание глобальной структуры состояния и создания направленных на её линз через `create_slice`
 
-## Вариант #1: URL как глобальное состояни
+## Вариант №1: URL как глобальное состояние
 
 Во многом URL это действительно лучший способ хранить глобальное состояние. К нему можно получить доступ из любого компонента,
 из любой части дерева. Есть такие нативные элементы как `<form>` и `<a>`, существующие исключительно для обновления URL.
 И он сохраняется при перезагрузке страницы и при смене устройства; можно поделиться ссылкой с другом или отправить
-её you can share a URL with a friend or send it from your phone to your laptop and any state stored in it will be replicated.
+её с телефона на свой же ноутбук и сохраненное в ней состояние будет восстановлено.
 
-The next few sections of the tutorial will be about the router, and we’ll get much more into these topics.
+Несколько следующих разделов руководства будут о маршрутизаторе, в них эти темы будут разобраны куда более глубоко.
 
-But for now, we'll just look at options #2 and #3.
+А пока мы лишь посмотрим на варианты №2 и №3.
 
-## Option #2: Passing Signals through Context
+## Вариант №2: Передача Сигналов через Контекст
 
-In the section on [parent-child communication](view/08_parent_child.md), we saw that you can use `provide_context` to pass signal from a parent component to a child, and `use_context` to read it in the child. But `provide_context` works across any distance. If you want to create a global signal that holds some piece of state, you can provide it and access it via context anywhere in the descendants of the component where you provide it.
+В разделе о [коммуникации Родитель-Потомок](view/08_parent_child.md) мы рассмотрели, что с помощью `provide_context` передать сигнал
+из родительского компонента потомку, а с помощью `use_context` получить его в потомке.
+Но `provide_context` работает на любом расстоянии. Можно создать глобальный сигнал, хранящий кусочек состояния, вызвать
+`provide_context` и иметь к нему доступ отовсюду в потомках компонента, в котором была вызвана функция `provide_context`.
 
-A signal provided via context only causes reactive updates where it is read, not in any of the components in between, so it maintains the power of fine-grained reactive updates, even at a distance.
+Сигнал предоставляемый с помощью контекста вызывает реактивные обновление лишь там, где он из него читают, а не во всех
+компонентах между родителем и читающщим потомком, так что сила мелкозернистых реактивных обновлений сохраняется,
+даже на расстоянии.
 
-We start by creating a signal in the root of the app and providing it to
-all its children and descendants using `provide_context`.
+Начнём с создания сигнала в корне приложения и предоставления его всем потомкам через `provide_context`.
 
 ```rust
 #[component]
@@ -56,11 +60,10 @@ fn App() -> impl IntoView {
 }
 ```
 
-`<SetterButton/>` is the kind of counter we’ve written several times now.
-(See the sandbox below if you don’t understand what I mean.)
+`<SetterButton/>` это счетчик, который мы уже несколько раз писали.
+(См. песочницу ниже если не понимаете о чём я)
 
-`<FancyMath/>` and `<ListItems/>` both consume the signal we’re providing via
-`use_context` and do something with it.
+`<FancyMath/>` и `<ListItems/>` оба получают предоставляемый сигнал с помощью `use_context` и что-то с ним делают.
 
 ```rust
 /// A component that does some "fancy" math with the global count
@@ -87,7 +90,8 @@ fn FancyMath() -> impl IntoView {
 }
 ```
 
-Note that this same pattern can be applied to more complex state. If you have multiple fields you want to update independently, you can do that by providing some struct of signals:
+Отметим, что этот же паттерн можно применить и к более сложным состояниям. Если хочется независимо обновлять сразу несколько полей, 
+этого можно добиться, предоставляя некую структуру с сигналами:
 
 ```rust
 #[derive(Copy, Clone, Debug)]
@@ -113,9 +117,10 @@ fn App() -> impl IntoView {
 }
 ```
 
-## Option #3: Create a Global State Struct and Slices
+## Варианта №3: Создание Глобальной Структуры Состояния и Срезы
 
-You may find it cumbersome to wrap each field of a structure in a separate signal like this. In some cases, it can be useful to create a plain struct with non-reactive fields, and then wrap that in a signal.
+Оборачивание каждого поля структуры в отдельный сигнал может показаться громоздким.
+В некоторых случаях полезно создать обычную структуру с нереактивными полями, а затем обернуть её в сигнал. 
 
 ```rust
 #[derive(Copy, Clone, Debug, Default)]
@@ -132,7 +137,8 @@ fn App() -> impl IntoView {
 }
 ```
 
-But there’s a problem: because our whole state is wrapped in one signal, updating the value of one field will cause reactive updates in parts of the UI that only depend on the other.
+Но с этим есть проблема: поскольку всё наше состояние обёрнуто в единственный сигнал, обновление значения одного поля
+приведёт к реактивным обновлениям в частях UI, которые зависят лишь от других полей.
 
 ```rust
 let state = expect_context::<RwSignal<GlobalState>>();
@@ -142,11 +148,18 @@ view! {
 }
 ```
 
-In this example, clicking the button will cause the text inside `<p>` to be updated, cloning `state.name` again! Because signals are the atomic unit of reactivity, updating any field of the signal triggers updates to everything that depends on the signal.
+В данном примере нажатие на кнопку вызовет обновление текста внутри  `<p>`, с повторным клонированием `state.name`!
+Поскольку сигналы это мельчайшие составные части реактивности, обновление любого поля данного сигнала вызывает обновление
+всего, что от него зависит.
 
-There’s a better way. You can take fine-grained, reactive slices by using [`create_memo`](https://docs.rs/leptos/latest/leptos/fn.create_memo.html) or [`create_slice`](https://docs.rs/leptos/latest/leptos/fn.create_slice.html) (which uses `create_memo` but also provides a setter). “Memoizing” a value means creating a new reactive value which will only update when it changes. “Memoizing a slice” means creating a new reactive value which will only update when some field of the state struct updates.
+Есть способ получше. Можно брать мелкозернистые, реактивные срезы используя [`create_memo`](https://docs.rs/leptos/latest/leptos/fn.create_memo.html) или [`create_slice`](https://docs.rs/leptos/latest/leptos/fn.create_slice.html) (которая использует `create_memo`, но также представляет сеттер). 
+“Мемоизация” значения означает создание нового реактивного значения, которое обновляется лишь тогда, когда исходное меняется.
+“Мемоизация среза” означает создание новое реактивного значения, которое обновляется лишь тогда, когда определенное поле структуры обновляется.
 
-Here, instead of reading from the state signal directly, we create “slices” of that state with fine-grained updates via `create_slice`. Each slice signal only updates when the particular piece of the larger struct it accesses updates. This means you can create a single root signal, and then take independent, fine-grained slices of it in different components, each of which can update without notifying the others of changes.
+Вот, вместо чтения из сигнала состояния напрямую мы берём "срезы" этого состояния с мелкозернистыми обновлениями через  `create_slice`.
+Каждый сигнал-срез обновляется лишь когда определенная часть структуры меняется. Это значит можно сделать единый корневой сигнал,
+а затем брать от него независимые мелкозернистые срезы в различных компонентах, каждый из которых обновляется
+не уведомляя других об изменениях. 
 
 ```rust
 /// A component that updates the count in the global state.
@@ -181,19 +194,22 @@ fn GlobalStateCounter() -> impl IntoView {
 }
 ```
 
-Clicking this button only updates `state.count`, so if we create another slice
-somewhere else that only takes `state.name`, clicking the button won’t cause
-that other slice to update. This allows you to combine the benefits of a top-down
-data flow and of fine-grained reactive updates.
+Нажатие на эту кнопку обновляет лишь  `state.count`, так что если создать где-то ещё срез, берущий лишь `state.name`,
+нажатие на кнопку не приведет к обновление этого дополнительного среза. Это позволяет объединить преимущества 
+течения данных сверху вниз и мелкозернистых реактивных обновлений.
 
-> **Note**: There are some significant drawbacks to this approach. Both signals and memos need to own their values, so a memo will need to clone the field’s value on every change. The most natural way to manage state in a framework like Leptos is always to provide signals that are as locally-scoped and fine-grained as they can be, not to hoist everything up into global state. But when you _do_ need some kind of global state, `create_slice` can be a useful tool.
+> **Примечание**: У этого подхода есть существенные недостатки. И сигналам и мемоизированным значениям нужно владеть их значениями,
+> так что мемоизированное значение будет клонировать значение поля при каждом изменении. 
+> Самый естественный путь управлять состоянием в фреймворке как Leptos это всегда предоставлять сигналы
+> настолько локальные и мелкозернистые насколько это возможно, а не поднимать всё что ни попадя в глобальное состояние.
+> Но когда _нужно_ какое-то глобальное состояние, `create_slice` может быть полезна.
 
-```admonish sandbox title="Live example" collapsible=true
+```admonish sandbox title="Живой пример" collapsible=true
 
-[Click to open CodeSandbox.](https://codesandbox.io/p/sandbox/15-global-state-0-5-8c2ff6?file=%2Fsrc%2Fmain.rs%3A1%2C2)
+[Нажмите, чтобы открыть CodeSandbox.](https://codesandbox.io/p/sandbox/15-global-state-0-5-8c2ff6?file=%2Fsrc%2Fmain.rs%3A1%2C2)
 
 <noscript>
-  Please enable JavaScript to view examples.
+  Пожалуйста, включите Javascript для просмотра примеров.
 </noscript>
 
 <template>
