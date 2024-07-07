@@ -107,7 +107,7 @@ view! {
 [Нажмите, чтобы открыть CodeSandbox.](https://codesandbox.io/p/sandbox/11-suspense-0-5-qzpgqs?file=%2Fsrc%2Fmain.rs%3A1%2C1)
 
 <noscript>
-  Please enable JavaScript to view examples.
+  Пожалуйста, включите Javascript для просмотра примеров.
 </noscript>
 
 <template>

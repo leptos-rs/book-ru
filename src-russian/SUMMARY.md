@@ -13,7 +13,7 @@
     - [Формы и поля ввода](./view/05_forms.md)
     - [Порядок выполнения](./view/06_control_flow.md)
     - [Обработка ошибок](./view/07_errors.md)
-    - [Коммуникация Родитель-Ребёнок](./view/08_parent_child.md)
+    - [Коммуникация Родитель-Потомок](./view/08_parent_child.md)
     - [Передача дочерних элементов другим компонентам](./view/09_component_children.md)
     - [Без макросов: синтаксис строителя View](./view/builder.md)
 - [Реактивность](./reactivity/README.md)
